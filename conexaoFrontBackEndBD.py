@@ -6,12 +6,13 @@ app = Flask(__name__)
 CORS(app)
 
 DB_CONFIG = {
-    "user": "root",
-    "password": "root",
-    "host": "52.41.36.82",
-    "database": "enchentes_BD"
+    "user": os.environ.get("db_user"),
+    "password": os.environ.get("db_password"),
+    "host": os.environ.get("db_host"),
+    "database": os.environ.get("db_database"),
+    "port": 3306,  # Se for necessário
+    "connection_timeout": 5  # Opcional, para evitar travar
 }
-
 
 def conectar_mysql():
     return mysql.connector.connect(**DB_CONFIG)
