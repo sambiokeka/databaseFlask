@@ -8,9 +8,10 @@ CORS(app)
 DB_CONFIG = {
     "user": "root",
     "password": "root",
-    "host": "localhost",
+    "host": "52.41.36.82",
     "database": "enchentes_BD"
 }
+
 
 def conectar_mysql():
     return mysql.connector.connect(**DB_CONFIG)
